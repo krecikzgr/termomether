@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/krecikzgr/termomether/issues"
   },
-  "homepage": "https://github.com/krecikzgr/termomether#readme"
+  "homepage": "https://github.com/krecikzgr/termomether#readme",
+  "dependencies": {
+    "ds18b20-raspi": "^0.3.4",
+    "restify": "^8.4.0"
+  }
 }
