@@ -22,8 +22,10 @@ server.listen(8080, function () {
 
 pir.watch(function (err, value) {
     if (value == 1) {
-        sendMessage('Intruder alert');
+        console.log("Movment detected");
+        //sendMessage('Intruder alert');
     } else {
-        sendMessage('Intruder gone');
+        console.log("Movment ended");
+        //sendMessage('Intruder gone');
     }
 });
