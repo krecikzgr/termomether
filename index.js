@@ -1,5 +1,5 @@
-//const sensor = require('ds18b20-raspi');
-
+const sensor = require('ds18b20-raspi');
+const tempC = sensor.readSimpleC();
 var restify = require('restify');
 
 function respond(req, res, next) {
