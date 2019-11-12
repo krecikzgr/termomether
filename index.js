@@ -34,7 +34,8 @@ server.listen(8080, function () {
 io.sockets.on('connection', function (socket) {// WebSocket Connection
     var lightvalue = 0; //static variable for current status
     pir.watch(function (err, value) {
-        socket.emit('statusChanged', lightvalue);
+        console.log("status changed");
+        socket.emit('statusChanged', value);
         // if (value == 1) {
         //     led.writeSync(value);
         // } else {
