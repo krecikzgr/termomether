@@ -1,19 +1,20 @@
 const restify = require('restify');
-const sensor = require('ds18b20-raspi');
 var server = restify.createServer();
 
 var gpio = require('onoff').Gpio;
 var pir = new gpio(21, 'in', 'both');
+const led = new gpio(18, 'out');
 
 server.listen(8080, function () {
+    led.writeSync(0);
     console.log('%s listening at %s', server.name, server.url);
 });
 
 pir.watch(function (err, value) {
     if (value == 1) {
-        console.log("Movment detected");
+        led.writeSync(value);
     } else {
-        console.log("Movment ended");
+        led.writeSync(value);
     }
 });
 
