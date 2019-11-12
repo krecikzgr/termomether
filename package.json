@@ -19,6 +19,7 @@
   "dependencies": {
     "ds18b20-raspi": "^0.3.4",
     "onoff": "^5.0.0",
-    "restify": "^8.4.0"
+    "restify": "^8.4.0",
+    "socket.io": "^2.3.0"
   }
 }
