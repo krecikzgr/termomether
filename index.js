@@ -1,5 +1,5 @@
 const restify = require('restify');
-var io = require('socket.io')(app);
+var socketio = require('socket.io');
 var fs = require('fs');
 
 var server = restify.createServer();
