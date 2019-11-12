@@ -1,3 +1,4 @@
+const restify = require('restify');
 const sensor = require('ds18b20-raspi');
 var server = restify.createServer();
 
