@@ -31,7 +31,8 @@ server.listen(8080, function () {
 });
 
 
-io.sockets.on('connection', function (socket) {// WebSocket Connection
+io.sockets.on('connection', function (socket) {
+    console.log("ON CONNECTION");// WebSocket Connection
     var lightvalue = 0; //static variable for current status
     pir.watch(function (err, value) {
         console.log("status changed");
