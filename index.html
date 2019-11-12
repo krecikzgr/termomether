@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Get Data</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div id="status">0</div>
+    <script>
+        // client code here
+        var socket = io.connect('localhost:8080');
+        socket.on('statusChanged', function (message) {
+            console.log(message)
+            document.getElementById("statusChanged").innerHTML = message;
+        });
+    </script>
+</body>
+
+</html>
