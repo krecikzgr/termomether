@@ -14,7 +14,7 @@
         var socket = io.connect('localhost:8080');
         socket.on('statusChanged', function (message) {
             console.log(message)
-            document.getElementById("statusChanged").innerHTML = message;
+            document.getElementById("status").innerHTML = message;
         });
     </script>
 </body>
