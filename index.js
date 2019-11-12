@@ -2,15 +2,26 @@ const restify = require('restify');
 const sensor = require('ds18b20-raspi');
 var server = restify.createServer();
 
+var gpio = require('onoff').Gpio;
+var pir = new gpio(21, 'in', 'both');
+
 server.listen(8080, function () {
     console.log('%s listening at %s', server.name, server.url);
 });
 
-server.get('/temp', function (req, res, next) {
-    const tempC = sensor.readSimpleC();
-    res.send({ temperature: tempC });
-    next();
+pir.watch(function (err, value) {
+    if (value == 1) {
+        console.log("Movment detected");
+    } else {
+        console.log("Movment ended");
+    }
 });
+
+// server.get('/temp', function (req, res, next) {
+//     const tempC = sensor.readSimpleC();
+//     res.send({ temperature: tempC });
+//     next();
+// });
 
 // server.listen(8080, function () {
 //     console.log(`${tempC} degC`);
