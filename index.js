@@ -3,7 +3,6 @@ const sensor = require('ds18b20-raspi');
 var server = restify.createServer();
 
 server.listen(8080, function () {
-    console.log(`${tempC} degC`);
     console.log('%s listening at %s', server.name, server.url);
 });
 
